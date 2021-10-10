@@ -1,4 +1,5 @@
 import React from "react";
+import ItemLists from "./item-lists-comp";
 
 class MCI_COMP extends React.Component {
     constructor (props) {
@@ -37,11 +38,7 @@ class MCI_COMP extends React.Component {
         return (
             <div>
                 <h1>MCI APPLICATION</h1>
-                <ul>
-                    {this.state.items.map(item => (
-                        <li key={item.id}>{item.name}</li>
-                    ))}
-                </ul>
+                <ItemLists mciItems={this.state.items}/>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="name">Name</label><br/>
                     <label>{this.state.name}</label><br/>
